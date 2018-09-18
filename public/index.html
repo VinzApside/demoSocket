@@ -11,6 +11,8 @@
 <body>
     <h1>Demo socket IO</h1>
 
+    <h2 id='yourName'></h2>
+
     <h3>To everyone</h3>
     <form id="everyone">
         <input name="sendData" type='text' placeholder="Data">
@@ -26,9 +28,16 @@
 
     <h3>To me only</h3>
     <form id="me">
-        <button>send information to other user</button>
+        <button>I need to know how many is 4+2</button>
+        <div id='calculate'></div>
+
     </form>
     <hr>
+    <h3>Send to</h3>
+    <form id="oneUser">
+        <input name="sendTo" type='text' placeholder="user">
+        <button>send a poke </button>
+    </form>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
