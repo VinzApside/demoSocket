@@ -1,8 +1,7 @@
 let socket = io()
 //  permet de faire connexion entre front et back
 socket.on('connect', () => {
-    console.log(`you're connected`)
-    console.log(socket.id)
+    console.log(`you're connected, and you're ID is :`, socket.id)
 })
 socket.on('erreur', () => { alert(`There's some trouble here !`) });
 
@@ -33,7 +32,7 @@ jQuery('#me').on('submit', function (e) {
     e.preventDefault();
     socket.emit('justMe')
 })
-socket.on('meReceive', (theSum) => { document.getElementById("calculate").innerHTML = '4 +2 = ' + theSum; });
+socket.on('meReceive', (theSum) => { document.getElementById("calculate").innerHTML = '4 + 2 = ' + theSum; });
 
 
 //poke time
