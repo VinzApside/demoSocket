@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo Socket IO</title>
+</head>
+
+<body>
+    <h1>Demo socket IO</h1>
+
+    <h3>To everyone</h3>
+    <form id="everyone">
+        <input name="sendData" type='text' placeholder="Data">
+        <button>send datas to everyone</button>
+    </form>
+    <hr>
+    <h3>To others</h3>
+    <form id="other">
+        <input name="sendInformation" type='text' placeholder="Information">
+        <button>send information to other user</button>
+    </form>
+    <hr>
+
+    <h3>To me only</h3>
+    <form id="me">
+        <button>send information to other user</button>
+    </form>
+    <hr>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

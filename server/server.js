@@ -18,20 +18,39 @@ app.use(express.static(publicPath))
 
 //use socket.io
 io.on('connection', socket => {
-    console.log('a user is connected')
+    console.log('you are connected')
 
     socket.on('disconnect', () => {
         console.log('the user is disconnected')
     })
 
-    socket.on('sendingEveryone', () => {
-        socket.emit('everyoneReceive')
+    socket.on('connect_error', () => {
+        socket.emit('erreur')
+    })
+
+
+    socket.on('sendingEveryone', (data) => {
+        console.log('everyone');
+        console.log(data);
+        io.emit('everyoneReceive')
     }
     )
-    socket.on('sendingOther', () => {
-        socket.broadcast.emit('otherReceive')
+    socket.on('sendingOther', (information) => {
+        console.log('others');
+        console.log(information);
+        socket.broadcast.emit('otherReceive', (information))
     }
     )
+
+    socket.on('justMe', () => {
+        console.log('me');
+        socket.emit('meReceive');
+    })
+
+    socket.on('error', () => {
+        console.log('error')
+        socket.emit('erreur')
+    })
 
 
 })
